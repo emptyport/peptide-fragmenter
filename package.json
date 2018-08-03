@@ -1,0 +1,33 @@
+{
+  "name": "peptide-fragmenter",
+  "version": "1.0.0",
+  "description": "A library for fragmenting amino acid sequences",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test/test-index.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emptyport/peptide-fragmenter.git"
+  },
+  "keywords": [
+    "peptide",
+    "protein",
+    "mass spec",
+    "fragment"
+  ],
+  "author": "Michael Porter <michaelporter.chemistry@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emptyport/peptide-fragmenter/issues"
+  },
+  "homepage": "https://github.com/emptyport/peptide-fragmenter#readme",
+  "devDependencies": {
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.1"
+  },
+  "dependencies": {},
+  "directories": {
+    "test": "test"
+  }
+}
