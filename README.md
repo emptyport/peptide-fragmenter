@@ -1,4 +1,9 @@
 # Peptide Fragmenter
+
+[![Build Status](https://travis-ci.org/emptyport/peptide-fragmenter.svg?branch=master)](https://travis-ci.org/emptyport/peptide-fragmenter)
+[![codecov](https://codecov.io/gh/emptyport/peptide-fragmenter/branch/master/graph/badge.svg)](https://codecov.io/gh/emptyport/peptide-fragmenter)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A library for *in silico* fragmentation of proteins and peptides.
 
 View on npm [here](https://www.npmjs.com/package/peptide-fragmenter).
