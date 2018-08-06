@@ -32,7 +32,7 @@ const Z_SHIFT = -17.026548 + 18.010565; // -NH3 + H2O
 
 const PROTON = 1.007276466812;
 
-module.exports.fragment = function(sequence, ion_types=['b', 'y'], fragment_charges=[1],modifications={}) {
+module.exports.fragment = function(sequence, ion_types=['b', 'y'], fragment_charges=[1], modifications=[]) {
   sequence = sequence.toUpperCase();
   const ILLEGAL = [ 'B', 'J', 'O', 'U', 'X', 'Z' ];
 
@@ -50,7 +50,8 @@ module.exports.fragment = function(sequence, ion_types=['b', 'y'], fragment_char
   });
 
   // Add in the modifications
-  for (var mod in modifications) {
+  for (var i=0; i<modifications.length; i++) {
+    let mod = modifications[i];
     let pos = mod.position;
     let mass = mod.mass;
     massList[pos] = massList[pos] + mass;

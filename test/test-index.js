@@ -45,4 +45,25 @@ test('Charges', function(t) {
 
 });
 
+test('Accuracy', function(t) {
+    let fragments = pepFrag.fragment('ACDEFGHIKLMNPQRSTVWY', ['a', 'b', 'c', 'x', 'y', 'z'], [1,2]);
+
+    t.equal(Math.abs((fragments['a']['1'][0] - 44.04952) / 44.04952 * 1000000) < 2, true, 'a1 +1 within 2 ppm');
+    t.equal(Math.abs((fragments['b']['1'][9] - 1114.53503) / 1114.53503 * 1000000) < 1, true, 'b10 +1 within 1 ppm');
+    t.equal(Math.abs((fragments['c']['1'][17] - 2045.00557) / 2045.00557 * 1000000) < 1, true, 'c18 within 1 ppm');
+    t.equal(Math.abs((fragments['x']['2'][0] - 1175.54085) / 1175.54085 * 1000000) < 1, true, 'x1 +2 within 1 ppm');
+    t.equal(Math.abs((fragments['y']['2'][8] - 697.84795) / 697.84795 * 1000000) < 1, true, 'y9 +2 within 1 ppm');
+    t.equal(Math.abs((fragments['z']['2'][16] - 225.60541) / 225.60541 * 1000000) < 3, true, 'z17 +2 within 3 ppm');
+
+    t.end();
+});
+
+test('Modifications', function(t) {
+    let fragments = pepFrag.fragment('ACDEFGHIKLMNPQRSTVWY', ['b'], [1], [{'position': 1, 'mass': 57.02}]);
+
+    t.equal(Math.abs((fragments['b']['1'][1] - 232.07362) / 232.07362 * 1000000) < 2, true, 'b2 +1 within 2 ppm');
+
+    t.end();
+});
+
 
