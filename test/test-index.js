@@ -16,6 +16,14 @@ test('Default Settings', function(t) {
     t.end();
 });
 
+test('Illegal residues', function(t) {
+    let fragments = pepFrag.fragment('HELLO');
+
+    t.equal(Object.keys(fragments).length, 0, 'Nothing returned');
+
+    t.end();
+});
+
 test('Ion types', function(t) {
     let fragments = pepFrag.fragment('ELVISLIVES', ['a', 'b', 'c', 'x', 'y', 'z']);
 
