@@ -1,6 +1,6 @@
 {
   "name": "peptide-fragmenter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A library for fragmenting amino acid sequences",
   "main": "index.js",
   "scripts": {

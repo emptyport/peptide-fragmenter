@@ -117,6 +117,8 @@ Output
 
 The output of this function is an object in which the keys are the ion types. Each ion type itself is an object with the fragment charges as the keys. Each charge key holds an array of m/z values correlating to each fragment. The final fragment (corresponding to the full length peptide) is excluded from all ion types.
 
+The m/z values match pretty closely with the [online Proteomics Toolkit Fragment Ion Calculator](http://db.systemsbiology.net:8080/proteomicsToolkit/FragIonServlet.html), but the values don't quite exactly match, probably just due to slightly different input values for the residue masses and whatnot. In most cases the m/z values are within 1 ppm. The lower the m/z value the higher the deviation (up to about 3 ppm), but generally speaking these differences are not significant, especially given the fact that the tolerances for peptide spectrum matching are often either 0.5 Da or 20 ppm (which are both far above my 1 ppm deviation). Even a tolerance of 0.01 Da is above that deviation (0.01 Da is 5 ppm at m/z 2000 and 50 ppm at m/z 200).
+
 ## Tests
 You can run `npm test` to run the tests after installing the development dependencies. 
 
