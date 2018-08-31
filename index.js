@@ -1,3 +1,6 @@
+// TODO
+// Add in water loss, ammonia loss, and internal cleavage
+
 const residue_masses = {
   "A": 71.03711,
   "R": 156.10111,
@@ -50,7 +53,7 @@ module.exports.fragment = function(sequence, ion_types=['b', 'y'], fragment_char
   });
 
   // Add in the modifications
-  for (var i=0; i<modifications.length; i++) {
+  for (var i=0, modLength = modifications.length; i<modLength; i++) {
     let mod = modifications[i];
     let pos = mod.position;
     let mass = mod.mass;
@@ -63,7 +66,7 @@ module.exports.fragment = function(sequence, ion_types=['b', 'y'], fragment_char
   let backwardMasses = new Array(len);
   forwardMasses[0] = massList[0];
   backwardMasses[len-1] = massList[len-1];
-  for(var i=1; i<massList.length; i++) {
+  for(var i=1, massListLength=massList.length; i<massListLength; i++) {
     let j = len - 1 - i;
     forwardMasses[i] = forwardMasses[i-1] + massList[i];
     backwardMasses[j] = backwardMasses[j+1] + massList[j];
