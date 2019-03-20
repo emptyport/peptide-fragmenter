@@ -68,8 +68,10 @@ test('Accuracy', function(t) {
 
 test('Modifications', function(t) {
     let fragments = pepFrag.fragment('ACDEFGHIKLMNPQRSTVWY', ['b'], [1], [{'position': 1, 'mass': 57.02}]);
-
     t.equal(Math.abs((fragments['b']['1'][1] - 232.07362) / 232.07362 * 1000000) < 2, true, 'b2 +1 within 2 ppm');
+
+    let nTermFragments = pepFrag.fragment('PEPTIDE', ['b', 'y'], [1], [{'position': 0, 'mass':24}]);
+    t.equal(Math.abs((nTermFragments['b']['1'][0] - 122.06009) / 122.06009 * 1000000) < 2, true, 'b1 +1 within 2 ppm')
 
     t.end();
 });
